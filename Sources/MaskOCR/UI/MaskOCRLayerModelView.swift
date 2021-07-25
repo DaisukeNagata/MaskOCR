@@ -13,9 +13,9 @@ import MobileCoreServices
 public final class MaskOCRLayerModelView: NSObject {
 
     public var maskModel: MaskOCRLayerModel?
+    public var mLViewModel = MaskOCRLayerViewModel()
     var mv = MaskOCRGestureViewModel()
     var panGesture = UIPanGestureRecognizer()
-    var mLViewModel = MaskOCRLayerViewModel()
     private var originCenter: CGFloat = 0
     private var gestureObject: MaskOCRGestureViewModel
 

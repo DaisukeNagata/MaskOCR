@@ -22,13 +22,12 @@ final public class MaskOCRGestureViewModel: NSObject {
         case touchSideRight
         case touchNone
     }
-
+    public var lineView: UIImageView?
     var framePoint  = CGPoint()
     var endPoint = CGPoint()
     var endFrame = CGRect()
     var touchFlag = TouchFlag.touchBottomRight
     var cALayerView = MaskOCRHhollowTargetLayer()
-    var lineView: UIImageView?
     var modelView: MaskOCRLayerModelView?
     private var mLViewModel: MaskOCRLayerViewModel?
 

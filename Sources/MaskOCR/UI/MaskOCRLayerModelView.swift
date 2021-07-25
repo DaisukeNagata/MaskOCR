@@ -12,12 +12,14 @@ import MobileCoreServices
 @available(iOS 14.0, *)
 public final class MaskOCRLayerModelView: NSObject {
 
-    var panGesture = UIPanGestureRecognizer()
-    public var mv: MaskOCRGestureViewModel?
     public var maskModel: MaskOCRLayerModel?
-    public var mLViewModel: MaskOCRLayerViewModel?
+    var mv = MaskOCRGestureViewModel()
+    var panGesture = UIPanGestureRecognizer()
+    var mLViewModel = MaskOCRLayerViewModel()
     private var originCenter: CGFloat = 0
     private var gestureObject: MaskOCRGestureViewModel
+
+
     public init(gestureObject: MaskOCRGestureViewModel,
                 imageView: UIImageView,
                 maskGestureView: UIView) {
@@ -29,7 +31,7 @@ public final class MaskOCRLayerModelView: NSObject {
                                       maskGestureView: maskGestureView)
         super.init()
         frameResize(images: imageView.image, rect: imageView.frame)
-        mv = MaskOCRGestureViewModel(lineView: imageView, modelView: self)
+        mv.desgin(modelView: self)
         originCenter = (maskModel?.defaltImageView.frame.height ?? 0)/2 + (maskModel?.defaltImageView.frame.origin.y ?? 0)
 
         panGesture.delegate = self
@@ -57,13 +59,13 @@ public final class MaskOCRLayerModelView: NSObject {
 
         maskModel?.defaltImageView.image = maskModel?.imageView.image
         let orginY = Int(maskModel?.defaltImageView.frame.size.height ?? 0) - Int(maskModel?.imageView.image?.size.height ?? 0)
-        gestureObject.lineView?.frame = CGRect(x: 0, y: CGFloat(orginY),
+        gestureObject.lineView.frame = CGRect(x: 0, y: CGFloat(orginY),
                                                width: maskModel?.defaltImageView.frame.width ?? 0,
                                                height: maskModel?.defaltImageView.image?.size.height ?? 0)
         gestureObject.cALayerView.tori(gestureObject)
         maskModel?.imageView.layer.addSublayer(gestureObject.cALayerView.hollowTargetLayer ?? CALayer())
         maskModel?.imageView.addSubview(gestureObject.cALayerView)
-        maskModel?.imageView.addSubview(gestureObject.lineView ?? UIImageView())
+        maskModel?.imageView.addSubview(gestureObject.lineView)
         
     }
 
@@ -86,18 +88,18 @@ extension MaskOCRLayerModelView: UIGestureRecognizerDelegate {
     @objc func panTapped(sender:UIPanGestureRecognizer) {
         let position: CGPoint = sender.location(in: gestureObject.cALayerView)
         DispatchQueue.main.async { [self] in
-            gestureObject.endFrame = gestureObject.lineView?.frame ?? CGRect()
-            gestureObject.endPoint = gestureObject.lineView?.frame.origin ?? CGPoint()
+            gestureObject.endFrame = gestureObject.lineView.frame
+            gestureObject.endPoint = gestureObject.lineView.frame.origin
             gestureObject.cALayerView.tori(gestureObject)
         }
         switch sender.state {
         case .ended:
-            gestureObject.endPoint = gestureObject.lineView?.frame.origin ?? CGPoint()
-            gestureObject.endFrame = gestureObject.lineView?.frame ?? CGRect()
+            gestureObject.endPoint = gestureObject.lineView.frame.origin
+            gestureObject.endFrame = gestureObject.lineView.frame
         case .began:
             gestureObject.touchFlag = gestureObject.cropEdgeForPoint(point: gestureObject.framePoint)
         case .changed:
-            self.gestureObject.updatePoint(gestureObject.lineView?.frame.height ?? 0,
+            self.gestureObject.updatePoint(gestureObject.lineView.frame.height,
                                            point: position,touchFlag: gestureObject.touchFlag)
         default: break
         }

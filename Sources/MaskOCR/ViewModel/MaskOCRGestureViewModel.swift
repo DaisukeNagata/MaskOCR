@@ -22,7 +22,8 @@ final public class MaskOCRGestureViewModel: NSObject {
         case touchSideRight
         case touchNone
     }
-    public var lineView: UIImageView?
+    public var maskModel: MaskOCRLayerModel?
+    public var lineView = UIImageView()
     var framePoint  = CGPoint()
     var endPoint = CGPoint()
     var endFrame = CGRect()
@@ -31,22 +32,10 @@ final public class MaskOCRGestureViewModel: NSObject {
     var modelView: MaskOCRLayerModelView?
     private var mLViewModel: MaskOCRLayerViewModel?
 
-    public init(lineView: UIImageView, modelView: MaskOCRLayerModelView?) {
-        super.init()
-        cALayerView = MaskOCRHhollowTargetLayer()
-        self.lineView = lineView
-        self.modelView = modelView
-        desgin()
-    }
-
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     public func cropEdgeForPoint(point: CGPoint) -> TouchFlag {
         //タップした領域を取得
-        guard let rect = lineView?.frame else { return .touchNone}
+        let rect = lineView.frame
         var topLeftRect: CGRect = rect
         topLeftRect.size.height = CGFloat(64)
         topLeftRect.size.width = CGFloat(64)
@@ -98,9 +87,9 @@ final public class MaskOCRGestureViewModel: NSObject {
         }
         return TouchFlag.touchNone
     }
-    //タップされた領域からMaskするViewのサイズ、座標計算
+
     func updatePoint(_ screenWidth: CGFloat, point: CGPoint, touchFlag: TouchFlag) {
-        guard let lineDashView = lineView else { return }
+        let lineDashView = lineView
         switch touchFlag {
         case .touchNone: break
         case .touchSideRight:
@@ -140,8 +129,8 @@ final public class MaskOCRGestureViewModel: NSObject {
 
     @objc private func panTapped(sender: UIPanGestureRecognizer) { modelView?.panTapped(sender: sender) }
 
-    private func desgin() {
-        guard let modelView = modelView, let imageView = modelView.maskModel?.imageView else { return }
+    func desgin(modelView: MaskOCRLayerModelView) {
+        guard let imageView = modelView.maskModel?.imageView else { return }
         modelView.maskModel?.maskGestureView?.addSubview(imageView)
         modelView.panGesture = UIPanGestureRecognizer(target: self, action:#selector(panTapped))
         modelView.maskModel?.maskGestureView?.addGestureRecognizer(modelView.panGesture)

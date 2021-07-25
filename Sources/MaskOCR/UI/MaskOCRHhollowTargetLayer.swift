@@ -36,8 +36,8 @@ final public class MaskOCRHhollowTargetLayer: UIView {
                 let maskLayer = maskLayer
             else { return }
 
-        gesture.lineView?.layer.borderWidth = 1
-        gesture.lineView?.layer.borderColor = UIColor.white.cgColor
+        gesture.lineView.layer.borderWidth = 1
+        gesture.lineView.layer.borderColor = UIColor.white.cgColor
 
         hollowTargetLayer.bounds = self.bounds
         hollowTargetLayer.frame.size.height = UIScreen.main.bounds.height
@@ -51,7 +51,7 @@ final public class MaskOCRHhollowTargetLayer: UIView {
 
         maskLayer.bounds = hollowTargetLayer.bounds
 
-        path = UIBezierPath.init(rect: gesture.lineView?.frame ?? CGRect())
+        path = UIBezierPath.init(rect: gesture.lineView.frame)
         path?.append(UIBezierPath(rect: maskLayer.bounds))
 
         maskLayer.fillColor = UIColor.black.cgColor

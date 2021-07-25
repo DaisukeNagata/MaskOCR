@@ -127,12 +127,4 @@ final public class MaskOCRGestureViewModel: NSObject {
         }
     }
 
-    @objc private func panTapped(sender: UIPanGestureRecognizer) { modelView?.panTapped(sender: sender) }
-
-    func desgin(modelView: MaskOCRLayerModelView) {
-        guard let imageView = modelView.maskModel?.imageView else { return }
-        modelView.maskModel?.maskGestureView?.addSubview(imageView)
-        modelView.panGesture = UIPanGestureRecognizer(target: self, action:#selector(panTapped))
-        modelView.maskModel?.maskGestureView?.addGestureRecognizer(modelView.panGesture)
-    }
 }

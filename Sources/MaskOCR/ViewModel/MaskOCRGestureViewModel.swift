@@ -32,7 +32,7 @@ final public class MaskOCRGestureViewModel: NSObject {
     var modelView: MaskOCRLayerModelView?
     private var mLViewModel: MaskOCRLayerViewModel?
 
-    init(lineView: UIImageView, modelView: MaskOCRLayerModelView?) {
+    public init(lineView: UIImageView, modelView: MaskOCRLayerModelView?) {
         super.init()
         cALayerView = MaskOCRHhollowTargetLayer()
         self.lineView = lineView

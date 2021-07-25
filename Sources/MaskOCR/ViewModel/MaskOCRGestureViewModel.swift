@@ -27,26 +27,22 @@ final public class MaskOCRGestureViewModel: NSObject {
     var endPoint = CGPoint()
     var endFrame = CGRect()
     var touchFlag = TouchFlag.touchBottomRight
-    var cALayerView: MaskOCRHhollowTargetLayer?
+    var cALayerView = MaskOCRHhollowTargetLayer()
     var lineView: UIImageView?
+    var modelView: MaskOCRLayerModelView?
+    private var mLViewModel: MaskOCRLayerViewModel?
 
-    init(lineView: UIImageView){
+    init(lineView: UIImageView, modelView: MaskOCRLayerModelView?) {
+        super.init()
         cALayerView = MaskOCRHhollowTargetLayer()
         self.lineView = lineView
+        self.modelView = modelView
+        desgin()
     }
+
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    public var mLViewModel: MaskOCRLayerViewModel?
-    public var modelView: MaskOCRLayerModelView?
-    public init(mo: MaskOCRLayerViewModel, modelView: MaskOCRLayerModelView?) {
-        super.init()
-        self.modelView = modelView
-        mLViewModel = mo
-        desgin(mo: mo)
-
     }
 
     public func cropEdgeForPoint(point: CGPoint) -> TouchFlag {
@@ -145,8 +141,7 @@ final public class MaskOCRGestureViewModel: NSObject {
 
     @objc private func panTapped(sender: UIPanGestureRecognizer) { modelView?.panTapped(sender: sender) }
 
-    private func desgin(mo: MaskOCRLayerViewModel) {
-        mLViewModel = mo
+    private func desgin() {
         guard let modelView = modelView, let imageView = modelView.maskModel?.imageView else { return }
         modelView.maskModel?.maskGestureView?.addSubview(imageView)
         modelView.panGesture = UIPanGestureRecognizer(target: self, action:#selector(panTapped))

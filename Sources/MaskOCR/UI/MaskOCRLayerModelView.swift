@@ -29,7 +29,7 @@ public final class MaskOCRLayerModelView: NSObject {
                                       maskGestureView: maskGestureView)
         super.init()
         frameResize(images: imageView.image, rect: imageView.frame)
-        mv = MaskOCRGestureViewModel(mo: mLViewModel ?? MaskOCRLayerViewModel(), modelView: self)
+        mv = MaskOCRGestureViewModel(lineView: imageView, modelView: self)
         originCenter = (maskModel?.defaltImageView.frame.height ?? 0)/2 + (maskModel?.defaltImageView.frame.origin.y ?? 0)
 
         panGesture.delegate = self
@@ -60,9 +60,9 @@ public final class MaskOCRLayerModelView: NSObject {
         gestureObject.lineView?.frame = CGRect(x: 0, y: CGFloat(orginY),
                                                width: maskModel?.defaltImageView.frame.width ?? 0,
                                                height: maskModel?.defaltImageView.image?.size.height ?? 0)
-        gestureObject.cALayerView?.tori(gestureObject)
-        maskModel?.imageView.layer.addSublayer(gestureObject.cALayerView?.hollowTargetLayer ?? CALayer())
-        maskModel?.imageView.addSubview(gestureObject.cALayerView ?? UIView())
+        gestureObject.cALayerView.tori(gestureObject)
+        maskModel?.imageView.layer.addSublayer(gestureObject.cALayerView.hollowTargetLayer ?? CALayer())
+        maskModel?.imageView.addSubview(gestureObject.cALayerView)
         maskModel?.imageView.addSubview(gestureObject.lineView ?? UIImageView())
         
     }
@@ -88,7 +88,7 @@ extension MaskOCRLayerModelView: UIGestureRecognizerDelegate {
         DispatchQueue.main.async { [self] in
             gestureObject.endFrame = gestureObject.lineView?.frame ?? CGRect()
             gestureObject.endPoint = gestureObject.lineView?.frame.origin ?? CGPoint()
-            gestureObject.cALayerView?.tori(gestureObject)
+            gestureObject.cALayerView.tori(gestureObject)
         }
         switch sender.state {
         case .ended:

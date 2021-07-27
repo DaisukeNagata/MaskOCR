@@ -29,6 +29,13 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
 
         prepareCamera()
         beginSession()
+        textRecognitionRequest = VNRecognizeTextRequest(completionHandler: { (request, error) in
+            if let results = request.results, !results.isEmpty {
+                if let requestResults = request.results as? [VNRecognizedTextObservation] {
+                    self.addRecognizedText(recognizedText: requestResults)
+                }
+            }
+        })
     }
 
     public func initSet() {

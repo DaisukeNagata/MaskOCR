@@ -50,23 +50,23 @@ public final class MaskOCRLayerModelView: NSObject {
     public func frameResize(images: UIImage?, rect: CGRect) {
         guard let model = maskModel, let images = images else { return }
         maskModel?.imageView.frame = rect
-        
+
         let imageSize = AVMakeRect(aspectRatio: images.size, insideRect: model.imageView.bounds)
         model.imageView.image = maskModel?.image
         model.imageView.frame.size = imageSize.size
         model.imageView.center = CGPoint(x: rect.width/2, y: rect.origin.y + rect.height/2)
 
         maskModel?.defaltImageView.image = maskModel?.imageView.image
-        let orginY = Int(maskModel?.defaltImageView.frame.size.height ?? 0) - Int(maskModel?.imageView.image?.size.height ?? 0)
-        gestureObject.lineView.frame = CGRect(x: 0, y: CGFloat(orginY),
-                                               width: maskModel?.defaltImageView.frame.width ?? 0,
-                                               height: maskModel?.defaltImageView.image?.size.height ?? 0)
+
+        gestureObject.lineView.frame = CGRect(x: 0,
+                                              y: 0,
+                                              width: imageSize.width,
+                                              height: imageSize.height)
         gestureObject.cALayerView.tori(gestureObject)
         maskModel?.imageView.layer.addSublayer(gestureObject.cALayerView.hollowTargetLayer ?? CALayer())
         maskModel?.imageView.addSubview(gestureObject.cALayerView)
         maskModel?.imageView.addSubview(gestureObject.lineView)
         maskModel?.maskGestureView?.addSubview(maskModel?.imageView ?? UIImageView())
-        
     }
 
     func imageResize() {

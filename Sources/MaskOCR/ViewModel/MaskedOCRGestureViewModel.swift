@@ -38,23 +38,26 @@ public class MaskedOCRGestureViewModel: NSObject {
 @available(iOS 14.0, *)
 extension MaskedOCRGestureViewModel: UIGestureRecognizerDelegate {
 
-    @objc func panTappedAction(sender:UIPanGestureRecognizer) {
+    @objc func panTappedAction(sender: UIPanGestureRecognizer) {
         let gestureObject = modelView.gestureObject
+        let rect = modelView.maskModel?.defaltImageView.frame
         let position: CGPoint = sender.location(in: gestureObject.cALayerView)
         DispatchQueue.main.async {
             gestureObject.endFrame = gestureObject.lineView.frame
             gestureObject.endPoint = gestureObject.lineView.frame.origin
             gestureObject.cALayerView.tori(gestureObject)
         }
+        guard rect?.height ?? 0 >= position.y else {
+            return
+        }
         switch sender.state {
         case .ended:
             gestureObject.endPoint = gestureObject.lineView.frame.origin
             gestureObject.endFrame = gestureObject.lineView.frame
         case .began:
-            gestureObject.touchFlag = (gestureObject.cropEdgeForPoint(point: gestureObject.framePoint))
+            gestureObject.touchFlag = gestureObject.cropEdgeForPoint(point: gestureObject.framePoint)
         case .changed:
-            gestureObject.updatePoint(gestureObject.lineView.frame.height,
-                                            point: position,touchFlag: gestureObject.touchFlag)
+            gestureObject.updatePoint(point: position, touchFlag: gestureObject.touchFlag)
         default: break
         }
     }

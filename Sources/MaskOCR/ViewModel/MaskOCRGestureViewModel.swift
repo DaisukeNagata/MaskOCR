@@ -88,7 +88,7 @@ final public class MaskOCRGestureViewModel: NSObject {
         return TouchFlag.touchNone
     }
 
-    func updatePoint(_ screenWidth: CGFloat, point: CGPoint, touchFlag: TouchFlag) {
+    func updatePoint(point: CGPoint, touchFlag: TouchFlag) {
         let lineDashView = lineView
         switch touchFlag {
         case .touchNone: break

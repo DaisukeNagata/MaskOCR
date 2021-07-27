@@ -17,7 +17,7 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
     public var changeExecution: ((UIImage) -> Void)?
 
     @Published private var st = ""
-    @Published private var ocrText = " "
+    @Published private var ocrText = ""
     @Published private var ocrSplitText = ""
     private var takePhoto: Bool = false
     private var capturepDevice: AVCaptureDevice!

@@ -1,9 +1,5 @@
-//
-//  SceneDelegate.swift
-//  MaskedOCRCamera
-//
-//  Created by 永田大祐 on 2021/07/18.
-//
+import UIKit
+import SwiftUI
 
 import UIKit
 import SwiftUI
@@ -60,4 +56,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

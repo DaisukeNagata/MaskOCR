@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB333CE726B046AB0023C3CD /* MaskOCR in Frameworks */ = {isa = PBXBuildFile; productRef = BB333CE626B046AB0023C3CD /* MaskOCR */; };
+		BB333CEF26B048040023C3CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB333CCD26B045440023C3CD /* Preview Assets.xcassets */; };
+		BB333CF026B048080023C3CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB333CCA26B045440023C3CD /* Assets.xcassets */; };
+		BB333CF226B048130023C3CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CE826B047250023C3CD /* AppDelegate.swift */; };
+		BB333CF426B048130023C3CD /* MaskOCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CE326B046060023C3CD /* MaskOCRView.swift */; };
+		BB333CF526B048130023C3CD /* MaskOCRDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CE126B045DC0023C3CD /* MaskOCRDesign.swift */; };
+		BB333CF626B048130023C3CD /* MaskOCRItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CDF26B045CB0023C3CD /* MaskOCRItemList.swift */; };
+		BB333CF726B048130023C3CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CC826B045430023C3CD /* ContentView.swift */; };
+		BB333CF926B048FE0023C3CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB333CEA26B0472C0023C3CD /* SceneDelegate.swift */; };
+		BB333CFE26B04DE30023C3CD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB333CFD26B04DE30023C3CD /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB333CC326B045430023C3CD /* MaskOCRCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaskOCRCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB333CC826B045430023C3CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB333CCA26B045440023C3CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB333CCD26B045440023C3CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB333CCF26B045440023C3CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB333CDF26B045CB0023C3CD /* MaskOCRItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskOCRItemList.swift; sourceTree = "<group>"; };
+		BB333CE126B045DC0023C3CD /* MaskOCRDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskOCRDesign.swift; sourceTree = "<group>"; };
+		BB333CE326B046060023C3CD /* MaskOCRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskOCRView.swift; sourceTree = "<group>"; };
+		BB333CE826B047250023C3CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB333CEA26B0472C0023C3CD /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB333CFD26B04DE30023C3CD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB333CC026B045430023C3CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB333CE726B046AB0023C3CD /* MaskOCR in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB333CBA26B045430023C3CD = {
+			isa = PBXGroup;
+			children = (
+				BB333CC526B045430023C3CD /* MaskOCRCamera */,
+				BB333CC426B045430023C3CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB333CC426B045430023C3CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB333CC326B045430023C3CD /* MaskOCRCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB333CC526B045430023C3CD /* MaskOCRCamera */ = {
+			isa = PBXGroup;
+			children = (
+				BB333CFD26B04DE30023C3CD /* Launch Screen.storyboard */,
+				BB333CE826B047250023C3CD /* AppDelegate.swift */,
+				BB333CEA26B0472C0023C3CD /* SceneDelegate.swift */,
+				BB333CE326B046060023C3CD /* MaskOCRView.swift */,
+				BB333CE126B045DC0023C3CD /* MaskOCRDesign.swift */,
+				BB333CDF26B045CB0023C3CD /* MaskOCRItemList.swift */,
+				BB333CC826B045430023C3CD /* ContentView.swift */,
+				BB333CCA26B045440023C3CD /* Assets.xcassets */,
+				BB333CCF26B045440023C3CD /* Info.plist */,
+				BB333CCC26B045440023C3CD /* Preview Content */,
+			);
+			path = MaskOCRCamera;
+			sourceTree = "<group>";
+		};
+		BB333CCC26B045440023C3CD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB333CCD26B045440023C3CD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB333CC226B045430023C3CD /* MaskOCRCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB333CD226B045440023C3CD /* Build configuration list for PBXNativeTarget "MaskOCRCamera" */;
+			buildPhases = (
+				BB333CBF26B045430023C3CD /* Sources */,
+				BB333CC026B045430023C3CD /* Frameworks */,
+				BB333CC126B045430023C3CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaskOCRCamera;
+			packageProductDependencies = (
+				BB333CE626B046AB0023C3CD /* MaskOCR */,
+			);
+			productName = MaskOCRCamera2;
+			productReference = BB333CC326B045430023C3CD /* MaskOCRCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB333CBB26B045430023C3CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					BB333CC226B045430023C3CD = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = BB333CBE26B045430023C3CD /* Build configuration list for PBXProject "MaskOCRCamera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB333CBA26B045430023C3CD;
+			packageReferences = (
+				BB333CE526B046AB0023C3CD /* XCRemoteSwiftPackageReference "MaskOCR" */,
+			);
+			productRefGroup = BB333CC426B045430023C3CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB333CC226B045430023C3CD /* MaskOCRCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB333CC126B045430023C3CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB333CFE26B04DE30023C3CD /* Launch Screen.storyboard in Resources */,
+				BB333CF026B048080023C3CD /* Assets.xcassets in Resources */,
+				BB333CEF26B048040023C3CD /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB333CBF26B045430023C3CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB333CF226B048130023C3CD /* AppDelegate.swift in Sources */,
+				BB333CF426B048130023C3CD /* MaskOCRView.swift in Sources */,
+				BB333CF526B048130023C3CD /* MaskOCRDesign.swift in Sources */,
+				BB333CF626B048130023C3CD /* MaskOCRItemList.swift in Sources */,
+				BB333CF726B048130023C3CD /* ContentView.swift in Sources */,
+				BB333CF926B048FE0023C3CD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BB333CD026B045440023C3CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB333CD126B045440023C3CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB333CD326B045440023C3CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MaskOCRCamera/Preview Content\"";
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MaskOCRCamera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dbank0208.MaskOCRCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB333CD426B045440023C3CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MaskOCRCamera/Preview Content\"";
+				DEVELOPMENT_TEAM = B3ZKJZUE9E;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MaskOCRCamera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dbank0208.MaskOCRCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB333CBE26B045430023C3CD /* Build configuration list for PBXProject "MaskOCRCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB333CD026B045440023C3CD /* Debug */,
+				BB333CD126B045440023C3CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB333CD226B045440023C3CD /* Build configuration list for PBXNativeTarget "MaskOCRCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB333CD326B045440023C3CD /* Debug */,
+				BB333CD426B045440023C3CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB333CE526B046AB0023C3CD /* XCRemoteSwiftPackageReference "MaskOCR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:daisukenagata/MaskOCR.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB333CE626B046AB0023C3CD /* MaskOCR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB333CE526B046AB0023C3CD /* XCRemoteSwiftPackageReference "MaskOCR" */;
+			productName = MaskOCR;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BB333CBB26B045430023C3CD /* Project object */;
+}

@@ -40,7 +40,7 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
 
     public func initSet() {
         st = ""
-        ocrText = " "
+        ocrText = ""
         previewLayer.isHidden = false
     }
 

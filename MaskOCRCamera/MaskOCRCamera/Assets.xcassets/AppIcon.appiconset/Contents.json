@@ -63,37 +63,35 @@
       "size" : "29x29"
     },
     {
-      "filename" : "Untitled-4.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "Untitled-5.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Untitled-2.png",
+      "filename" : "Untitled@3x-2.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "Untitled-3.png",
+      "filename" : "Untitled@2x-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "Untitled-1.png",
+      "filename" : "Untitled@3x-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Untitled.png",
+      "filename" : "Untitled@.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

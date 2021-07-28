@@ -91,45 +91,44 @@ final public class MaskOCRGestureViewModel: NSObject {
 
     func updatePoint(point: CGPoint, touchFlag: TouchFlag) {
         let lineDashView = lineView
-        let margin: CGFloat = 12
         switch touchFlag {
         case .touchNone: break
         case .touchSideRight:
-            guard -point.x + endFrame.maxX < endFrame.width - margin else { return }
+            guard -point.x + endFrame.maxX < endFrame.width else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
         case .touchBottomRight:
-            guard -point.y + endFrame.maxY < endFrame.height - margin, -point.x + endFrame.maxX < endFrame.width - margin else { return }
+            guard -point.y + endFrame.maxY < endFrame.height, -point.x + endFrame.maxX < endFrame.width else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchBottomLeft:
-            guard -point.y + endFrame.maxY < endFrame.height - margin, -point.x + endFrame.maxX > margin else { return }
+            guard -point.y + endFrame.maxY < endFrame.height, -point.x + endFrame.maxX > .zero else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchTop:
-            guard -point.y + endFrame.maxY > margin else { return }
+            guard -point.y + endFrame.maxY > .zero else { return }
             lineDashView.frame.origin.y = point.y
             lineDashView.frame.size.height = -point.y + endFrame.maxY
         case .touchDown:
-            guard -point.y + endFrame.maxY < endFrame.height - margin else { return }
+            guard -point.y + endFrame.maxY < endFrame.height - .zero else { return }
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchSideLeft:
-            guard -point.x + endFrame.maxX > margin else { return }
+            guard -point.x + endFrame.maxX > .zero else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
         case .touchTopRight:
-            guard -point.y + endFrame.maxY > margin, -point.x + endFrame.maxX < endFrame.width - margin else { return }
+            guard -point.y + endFrame.maxY > .zero, -point.x + endFrame.maxX < endFrame.width else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
             lineDashView.frame.origin.y = point.y
             lineDashView.frame.size.height =  -point.y + endFrame.maxY
         case .touchTopLeft:
-            guard -point.y + endFrame.maxY > margin, -point.x + endFrame.maxX > margin else { return }
+            guard -point.y + endFrame.maxY > .zero, -point.x + endFrame.maxX > .zero else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
             lineDashView.frame.origin.y = point.y

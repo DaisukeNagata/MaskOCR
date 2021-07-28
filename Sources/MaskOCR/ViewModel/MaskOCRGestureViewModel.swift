@@ -36,22 +36,23 @@ final public class MaskOCRGestureViewModel: NSObject {
     public func cropEdgeForPoint(point: CGPoint) -> TouchFlag {
 
         let rect = lineView.frame
+        let size: CGFloat = 64
         var topLeftRect: CGRect = rect
-        topLeftRect.size.height = CGFloat(64)
-        topLeftRect.size.width = CGFloat(64)
+        topLeftRect.size.height = CGFloat(size)
+        topLeftRect.size.width = CGFloat(size)
 
         if topLeftRect.contains(point) {
             return TouchFlag.touchTopLeft
         }
 
         var topRightRect = topLeftRect
-        topRightRect.origin.x = rect.maxX - CGFloat(64)
+        topRightRect.origin.x = rect.maxX - size
         if topRightRect.contains(point) {
             return TouchFlag.touchTopRight
         }
 
         var bottomLeftRect = topLeftRect
-        bottomLeftRect.origin.y = rect.maxY - CGFloat(64)
+        bottomLeftRect.origin.y = rect.maxY - size
         if bottomLeftRect.contains(point) {
             return TouchFlag.touchBottomLeft
         }
@@ -63,25 +64,25 @@ final public class MaskOCRGestureViewModel: NSObject {
         }
 
         var topRect = rect
-        topRect.size.height = CGFloat(64)
+        topRect.size.height = CGFloat(size)
         if topRect.contains(point) {
             return TouchFlag.touchTop
         }
 
         var bottomRect = rect
-        bottomRect.origin.y = rect.maxY - CGFloat(64)
+        bottomRect.origin.y = rect.maxY - size
         if bottomRect.contains(point) {
             return TouchFlag.touchDown
         }
 
         var leftRect = rect
-        leftRect.size.width = CGFloat(64)
+        leftRect.size.width = size
         if leftRect.contains(point) {
             return TouchFlag.touchSideLeft
         }
 
         var rightRect = rect
-        rightRect.origin.x = rect.maxX - CGFloat(64)
+        rightRect.origin.x = rect.maxX - size
         if rightRect.contains(point) {
             return TouchFlag.touchSideRight
         }
@@ -93,38 +94,45 @@ final public class MaskOCRGestureViewModel: NSObject {
         switch touchFlag {
         case .touchNone: break
         case .touchSideRight:
+            guard -point.x + endPoint.x < endFrame.width else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
         case .touchBottomRight:
+            guard -point.y + endPoint.y < 0, -point.x + endPoint.x < 0 else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchBottomLeft:
+            guard -point.y + endPoint.y < 0, -point.x + endFrame.maxX > 0  else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchTop:
+            guard -point.y + endFrame.maxY > 0 else { return }
             lineDashView.frame.origin.y = point.y
             lineDashView.frame.size.height = -point.y + endFrame.maxY
         case .touchDown:
+            guard -point.y + endPoint.y < 0 else { return }
             lineDashView.frame.size.height = -point.y + endPoint.y
             lineDashView.frame.origin.y = endPoint.y
         case .touchSideLeft:
+            guard -point.x + endFrame.maxX > 0 else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
         case .touchTopRight:
+            guard -point.y + endFrame.maxY > 0, -point.x + endPoint.x < 0 else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.minX
             lineDashView.frame.origin.y = point.y
             lineDashView.frame.size.height =  -point.y + endFrame.maxY
         case .touchTopLeft:
+            guard -point.y + endFrame.maxY > 0, -point.x + endFrame.maxX > 0 else { return }
             lineDashView.frame.origin.x = point.x
             lineDashView.frame.size.width = -point.x + endFrame.maxX
             lineDashView.frame.origin.y = point.y
             lineDashView.frame.size.height =  -point.y + endFrame.maxY
         }
     }
-
 }

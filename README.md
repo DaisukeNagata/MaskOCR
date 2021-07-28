@@ -1,11 +1,21 @@
-# MaskOCR
+# OCR function using Vision framework
 
-<p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/127242380-88e42df3-910c-4246-86e8-3c57d9c2311a.png" width=550 height=390>
- </p>
+<p align="left">
+<img src="https://user-images.githubusercontent.com/16457165/127398047-3fc2b153-08f7-4fc0-a090-17beab9e5896.png" width=900>
+<br>
+<br>
+</p>
 
+# Introduction
 
+<p align="left">
+|<img src= "https://user-images.githubusercontent.com/16457165/127393633-a8080a1f-a2c2-4b74-8aae-3534ec7cb892.png" width=250 height=250>|<img src= "https://user-images.githubusercontent.com/16457165/127394015-9c0b9e9b-c8e5-4f16-8e77-85876e6b928c.png" width=250 height=250>|<img src= "https://user-images.githubusercontent.com/16457165/127394274-56baf6eb-20b9-4c13-a5cd-19ac88e91381.png" width=250 height=250>|
+<br>
+<br>
+</p>
+ 
 # Example
+
 <p align="center">
 <img src= "https://user-images.githubusercontent.com/16457165/127109181-471c444a-f33d-4807-b1ed-1a75c38a8e6e.mov" width=300>
- </p>
+</p>

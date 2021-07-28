@@ -40,9 +40,9 @@ extension MaskedOCRGestureViewModel: UIGestureRecognizerDelegate {
 
     @objc func panTappedAction(sender: UIPanGestureRecognizer) {
         let gestureObject = modelView.gestureObject
-        let rect = gestureObject.lineView.frame
+        let rect = modelView.maskModel?.defaltImageView.frame
         let position: CGPoint = sender.location(in: gestureObject.cALayerView)
-        guard rect.height >= position.y else {
+        guard rect?.height ?? 0 >= position.y, position.y > 0 else {
             return
         }
         DispatchQueue.main.async {

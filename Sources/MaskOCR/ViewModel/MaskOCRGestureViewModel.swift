@@ -36,7 +36,7 @@ final public class MaskOCRGestureViewModel: NSObject {
     public func cropEdgeForPoint(point: CGPoint) -> TouchFlag {
 
         let rect = lineView.frame
-        let size: CGFloat = 64
+        let size: CGFloat = 48
         var topLeftRect: CGRect = rect
         topLeftRect.size.height = CGFloat(size)
         topLeftRect.size.width = CGFloat(size)
@@ -91,7 +91,7 @@ final public class MaskOCRGestureViewModel: NSObject {
 
     func updatePoint(point: CGPoint, touchFlag: TouchFlag) {
         let lineDashView = lineView
-        let margin: CGFloat = 44
+        let margin: CGFloat = 64
         switch touchFlag {
         case .touchNone: break
         case .touchSideRight:

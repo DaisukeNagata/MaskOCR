@@ -53,20 +53,18 @@ struct ContentView: View {
                 ocrMask.backView?
                     .frame(maxHeight: .infinity)
                     .isHidden(ocrMask.previewLayer.isHidden == false ? true : false)
-                ZStack {
-                    MaskOCRCALayerView(caLayer: ocrMask.previewLayer)
-                        .frame(maxHeight: .infinity)
-                        .isHidden(ocrMask.previewLayer.isHidden == false ? false : true)
-                }
+                MaskOCRCALayerView(caLayer: ocrMask.previewLayer)
+                    .frame(maxHeight: .infinity)
+                    .isHidden(ocrMask.previewLayer.isHidden == false ? false : true)
             }
             .edgesIgnoringSafeArea(.all)
-
             MaskeOCRView(viewItem) { v in
                 MaskeOCRItemList(viewItem: v,
                              avFoundationVM: ocrMask,
                              maskViewDesign: maskViewDesign)
             }
-        }.onAppear {
+        }
+        .onAppear {
             setting()
         }
     }

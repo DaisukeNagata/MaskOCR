@@ -74,6 +74,9 @@ struct MaskeOCRItemList: View {
                 }
             }
         }
+        .padding(.leading)
+        .padding(.trailing)
+        .padding(.top)
     }
 }
 

@@ -70,9 +70,4 @@ extension MaskedOCRGestureViewModel: UIGestureRecognizerDelegate {
         modelView.gestureObject.framePoint = position
         return true
     }
-
-    func gestureSet(modelView: MaskOCRLayerModelView) {
-        panGesture = UIPanGestureRecognizer(target: self, action:#selector(panTapped))
-        modelView.maskModel?.maskGestureView?.addGestureRecognizer(panGesture)
-    }
 }

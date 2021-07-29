@@ -8,7 +8,7 @@
 import UIKit
 
 @available(iOS 14.0, *)
-public class MaskedOCRGestureViewModel: NSObject {
+public class MaskOCRGestureActionViewModel: NSObject {
 
     public var viewModel: MaskOCRGestureViewModel
     public var modelView: MaskOCRLayerModelView
@@ -36,7 +36,7 @@ public class MaskedOCRGestureViewModel: NSObject {
 
 // MARK: UIPanGestureRecognizer
 @available(iOS 14.0, *)
-extension MaskedOCRGestureViewModel: UIGestureRecognizerDelegate {
+extension MaskOCRGestureActionViewModel: UIGestureRecognizerDelegate {
 
     @objc func panTappedAction(sender: UIPanGestureRecognizer) {
         let gestureObject = modelView.gestureObject

@@ -15,7 +15,7 @@ public final class MaskOCRLayerModelView: NSObject {
     public var maskModel: MaskOCRLayerModel?
     public var mLViewModel = MaskOCRLayerViewModel()
     public var gestureObject: MaskOCRGestureViewModel
-    var maskedOCRGestureViewModel: MaskedOCRGestureViewModel?
+    var maskOCRGestureActionViewModel: MaskOCRGestureActionViewModel?
     var mv = MaskOCRGestureViewModel()
     private var originCenter: CGFloat = 0
 
@@ -29,7 +29,7 @@ public final class MaskOCRLayerModelView: NSObject {
                                       defaltImageView: imageView,
                                       maskGestureView: maskGestureView)
         super.init()
-        maskedOCRGestureViewModel = MaskedOCRGestureViewModel(viewModel: gestureObject, modelView: self)
+        maskOCRGestureActionViewModel = MaskOCRGestureActionViewModel(viewModel: gestureObject, modelView: self)
 
     }
 

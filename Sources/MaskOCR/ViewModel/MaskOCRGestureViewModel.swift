@@ -32,11 +32,10 @@ final public class MaskOCRGestureViewModel: NSObject {
     var modelView: MaskOCRLayerModelView?
     private var mLViewModel: MaskOCRLayerViewModel?
 
-
     public func cropEdgeForPoint(point: CGPoint) -> TouchFlag {
 
         let rect = lineView.frame
-        let size: CGFloat = 24
+        let size: CGFloat = 32
         var topLeftRect: CGRect = rect
         topLeftRect.size.height = CGFloat(size)
         topLeftRect.size.width = CGFloat(size)
@@ -90,86 +89,80 @@ final public class MaskOCRGestureViewModel: NSObject {
     }
 
     func updatePoint(point: CGPoint, touchFlag: TouchFlag) {
-        let lineDashView = lineView
-        let resetSize: CGFloat = 10
         switch touchFlag {
         case .touchNone:break
         case .touchSideRight:
             guard -point.x + endFrame.maxX < endFrame.width else {
-                lineDashView.frame.origin.x = UIScreen.main.bounds.width/2
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.minX
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.minX
         case .touchBottomRight:
             guard -point.y + endFrame.maxY < endFrame.height, -point.x + endFrame.maxX < endFrame.width else {
-                lineDashView.frame.origin.x = point.x
-                lineDashView.frame.origin.y = point.y
-                lineDashView.frame.size.width = resetSize
-                lineDashView.frame.size.height = resetSize
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.minX
-            lineDashView.frame.size.height = -point.y + endPoint.y
-            lineDashView.frame.origin.y = endPoint.y
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.minX
+            lineView.frame.size.height = -point.y + endPoint.y
+            lineView.frame.origin.y = endPoint.y
         case .touchBottomLeft:
             guard -point.y + endFrame.maxY < endFrame.height, -point.x + endFrame.maxX > .zero else {
-                lineDashView.frame.origin.x = point.x
-                lineDashView.frame.origin.y = point.y
-                lineDashView.frame.size.width = resetSize
-                lineDashView.frame.size.height = resetSize
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.maxX
-            lineDashView.frame.size.height = -point.y + endPoint.y
-            lineDashView.frame.origin.y = endPoint.y
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.maxX
+            lineView.frame.size.height = -point.y + endPoint.y
+            lineView.frame.origin.y = endPoint.y
         case .touchTop:
             guard -point.y + endFrame.maxY > .zero else {
-                lineDashView.frame.origin.y = UIScreen.main.bounds.height/4
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.y = point.y
-            lineDashView.frame.size.height = -point.y + endFrame.maxY
+            lineView.frame.origin.y = point.y
+            lineView.frame.size.height = -point.y + endFrame.maxY
         case .touchDown:
             guard -point.y + endFrame.maxY < endFrame.height - .zero else {
-                lineDashView.frame.origin.y = UIScreen.main.bounds.height/4
+                resetLine()
                 return
             }
-            lineDashView.frame.size.height = -point.y + endPoint.y
-            lineDashView.frame.origin.y = endPoint.y
+            lineView.frame.size.height = -point.y + endPoint.y
+            lineView.frame.origin.y = endPoint.y
         case .touchSideLeft:
             guard -point.x + endFrame.maxX > .zero else {
-                lineDashView.frame.origin.x = UIScreen.main.bounds.width/2
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.maxX
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.maxX
         case .touchTopRight:
             guard -point.y + endFrame.maxY > .zero, -point.x + endFrame.maxX < endFrame.width else {
-                lineDashView.frame.origin.x = point.x
-                lineDashView.frame.origin.y = point.y
-                lineDashView.frame.size.width = resetSize
-                lineDashView.frame.size.height = resetSize
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.minX
-            lineDashView.frame.origin.y = point.y
-            lineDashView.frame.size.height =  -point.y + endFrame.maxY
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.minX
+            lineView.frame.origin.y = point.y
+            lineView.frame.size.height =  -point.y + endFrame.maxY
         case .touchTopLeft:
             guard -point.y + endFrame.maxY > .zero, -point.x + endFrame.maxX > .zero else {
-                lineDashView.frame.origin.x = point.x
-                lineDashView.frame.origin.y = point.y
-                lineDashView.frame.size.width = resetSize
-                lineDashView.frame.size.height = resetSize
+                resetLine()
                 return
             }
-            lineDashView.frame.origin.x = point.x
-            lineDashView.frame.size.width = -point.x + endFrame.maxX
-            lineDashView.frame.origin.y = point.y
-            lineDashView.frame.size.height =  -point.y + endFrame.maxY
+            lineView.frame.origin.x = point.x
+            lineView.frame.size.width = -point.x + endFrame.maxX
+            lineView.frame.origin.y = point.y
+            lineView.frame.size.height =  -point.y + endFrame.maxY
         }
+    }
+
+    private func resetLine() {
+        let resetSize: CGFloat = 44
+        lineView.frame.origin.x = UIScreen.main.bounds.width/2 - resetSize/2
+        lineView.frame.origin.y = UIScreen.main.bounds.height/4 + resetSize/2
+        lineView.frame.size.width = resetSize
+        lineView.frame.size.height = resetSize
     }
 }

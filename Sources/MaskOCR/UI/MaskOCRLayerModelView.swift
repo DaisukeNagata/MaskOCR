@@ -24,27 +24,21 @@ public final class MaskOCRLayerModelView: NSObject {
                 imageView: UIImageView,
                 maskGestureView: UIView) {
         self.gestureObject = gestureObject
-        mLViewModel = MaskOCRLayerViewModel()
         maskModel = MaskOCRLayerModel(image: imageView.image,
                                       imageView: imageView,
                                       defaltImageView: imageView,
                                       maskGestureView: maskGestureView)
         super.init()
-        originCenter = (maskModel?.defaltImageView.frame.height ?? 0)/2 + (maskModel?.defaltImageView.frame.origin.y ?? 0)
-        maskedOCRGestureViewModel = MaskedOCRGestureViewModel(viewModel: gestureObject,
-                                                              modelView: self)
+        maskedOCRGestureViewModel = MaskedOCRGestureViewModel(viewModel: gestureObject, modelView: self)
 
     }
 
     public func designInit() {
         originCenter = (maskModel?.defaltImageView.frame.height ?? 0)/2 + (maskModel?.defaltImageView.frame.origin.y ?? 0)
         maskModel?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2,
-                                              y: originCenter)
+        maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2, y: originCenter)
         imageResize()
-
         frameResize(images: maskModel?.imageView.image, rect: maskModel?.imageView.frame ?? CGRect())
-
     }
 
     public func frameResize(images: UIImage?, rect: CGRect) {
@@ -71,8 +65,7 @@ public final class MaskOCRLayerModelView: NSObject {
 
     func imageResize() {
         maskModel?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2,
-                                              y: originCenter)
+        maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2, y: originCenter)
         maskModel?.imageView.layer.mask?.removeFromSuperlayer()
         maskModel?.imageView.frame = maskModel?.defaltImageView.frame ?? CGRect()
         maskModel?.imageView.image = maskModel?.image

@@ -16,7 +16,6 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
     public var previewLayer: CALayer!
     public var changeExecution: ((UIImage) -> Void)?
 
-    @Published private var st = ""
     @Published private var ocrText = ""
     @Published private var ocrSplitText = ""
     private var takePhoto: Bool = false
@@ -39,7 +38,6 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
     }
 
     public func initSet() {
-        st = ""
         ocrText = ""
         previewLayer.isHidden = false
     }
@@ -155,13 +153,11 @@ final public class MaskOCRFunction: NSObject, AVCaptureVideoDataOutputSampleBuff
 @available(iOS 14.0, *)
 extension MaskOCRFunction {
     private func addRecognizedText(recognizedText: [VNRecognizedTextObservation]) {
-        st = ""
         ocrText = ""
         let maximumCandidates = 1
         for observation in recognizedText {
             guard let candidate = observation.topCandidates(maximumCandidates).first else { continue }
-            st += candidate.string
-            st.forEach { s in
+            candidate.string.forEach { s in
                 if (s.description.range(of: "\(ocrSplitText)",
                                         options: .regularExpression,
                                         range: nil,

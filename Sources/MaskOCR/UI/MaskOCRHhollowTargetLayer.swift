@@ -20,7 +20,6 @@ final class MaskOCRHhollowTargetLayer: UIView {
         super.init(frame: .zero)
 
         self.frame = UIScreen.main.bounds
-        self.frame.size.height = UIScreen.main.bounds.height
 
         hollowTargetLayer = CALayer()
         maskLayer = CAShapeLayer()
@@ -40,7 +39,6 @@ final class MaskOCRHhollowTargetLayer: UIView {
         gesture.lineView.layer.borderColor = UIColor.white.cgColor
 
         hollowTargetLayer.bounds = self.bounds
-        hollowTargetLayer.frame.size.height = UIScreen.main.bounds.height
         hollowTargetLayer.position = CGPoint(
             x: self.bounds.width / 2.0,
             y: self.bounds.height / 2.0

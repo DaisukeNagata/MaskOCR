@@ -21,20 +21,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaskOCRCamera" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="0.0" y="278.5" width="414" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="DyI-xn-P6s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled" translatesAutoresizingMaskIntoConstraints="NO" id="T8w-kr-uYe">
-                                <rect key="frame" x="49" y="322.5" width="316" height="316"/>
+                                <rect key="frame" x="49" y="45" width="316" height="806"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="316" id="6Wu-JH-Liu"/>
-                                    <constraint firstAttribute="height" constant="316" id="Dem-vd-OZz"/>
+                                    <constraint firstAttribute="width" constant="316" id="9x6-hS-T6o"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2021 EveryDaySoft All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1Hd-fR-u1j">
@@ -51,18 +41,14 @@
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="T8w-kr-uYe" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="1" id="5CF-nM-hOP"/>
-                            <constraint firstItem="T8w-kr-uYe" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="49" id="JGL-ya-Hf4"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="234.5" id="NOW-ZQ-b68"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="1Hd-fR-u1j" secondAttribute="leading" id="Ogl-uy-D15"/>
+                            <constraint firstItem="T8w-kr-uYe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2XH-ux-D3v"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="trailing" secondItem="1Hd-fR-u1j" secondAttribute="trailing" id="BID-d1-YyL"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="1Hd-fR-u1j" secondAttribute="bottom" constant="14" id="Uro-ct-4cz"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="cCU-us-Fom"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="1Hd-fR-u1j" secondAttribute="leading" id="dgH-HA-wrN"/>
                             <constraint firstItem="1Hd-fR-u1j" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" id="fQg-c6-kne"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="i3H-Pm-dJw"/>
                             <constraint firstItem="1Hd-fR-u1j" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="jVU-bJ-bKR"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="1Hd-fR-u1j" secondAttribute="trailing" id="lM1-pU-pBt"/>
-                            <constraint firstItem="T8w-kr-uYe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="32.5" id="m1V-qW-3VU"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="T8w-kr-uYe" secondAttribute="trailing" constant="49" id="mBn-oa-ynk"/>
+                            <constraint firstItem="T8w-kr-uYe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jkB-cf-Vqt"/>
+                            <constraint firstItem="T8w-kr-uYe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="o0L-2t-ovR"/>
                             <constraint firstItem="1Hd-fR-u1j" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="wNb-BU-D1T"/>
                         </constraints>
                     </view>
@@ -73,7 +59,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Untitled" width="1024" height="760"/>
+        <image name="Untitled" width="1155" height="806"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

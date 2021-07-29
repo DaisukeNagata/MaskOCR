@@ -66,7 +66,6 @@ struct ContentView: View {
                              avFoundationVM: ocrMask,
                              maskViewDesign: maskViewDesign)
             }
-            .padding()
         }.onAppear {
             setting()
         }

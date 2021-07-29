@@ -9,14 +9,14 @@
 import UIKit
 
 @available(iOS 14.0.0, *)
-final public class MaskOCRHhollowTargetLayer: UIView {
+final class MaskOCRHhollowTargetLayer: UIView {
 
     var hollowTargetLayer: CALayer?
 
     private var path:  UIBezierPath?
     private var maskLayer: CAShapeLayer?
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
 
         self.frame = UIScreen.main.bounds
@@ -31,7 +31,7 @@ final public class MaskOCRHhollowTargetLayer: UIView {
         super.init(coder: aDecoder)
     }
 
-    public func tori(_ gesture: MaskOCRGestureViewModel){
+    func tori(_ gesture: MaskOCRGestureViewModel){
         guard let hollowTargetLayer = hollowTargetLayer,
                 let maskLayer = maskLayer
             else { return }

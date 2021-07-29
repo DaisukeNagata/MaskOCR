@@ -17,5 +17,5 @@
 # Example
 
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/127109181-471c444a-f33d-4807-b1ed-1a75c38a8e6e.mov" width=300>
+<img src= "https://user-images.githubusercontent.com/16457165/127414896-856bd0ed-edc5-4bfa-a4d2-724005dfcb15.MP4" width=300>
 </p>

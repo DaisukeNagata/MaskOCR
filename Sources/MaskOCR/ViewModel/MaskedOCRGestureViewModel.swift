@@ -18,12 +18,12 @@ public class MaskedOCRGestureViewModel: NSObject {
         self.viewModel = viewModel
         self.modelView = modelView
         super.init()
-        desgin(viewModel: viewModel)
+        gestureSet()
         panGesture.delegate = self
 
     }
 
-    private func desgin(viewModel: MaskOCRGestureViewModel) {
+    private func gestureSet() {
         guard let imageView = modelView.maskModel?.imageView else { return }
         modelView.maskModel?.maskGestureView?.addSubview(imageView)
         panGesture = UIPanGestureRecognizer(target: self, action:#selector(panTapped))

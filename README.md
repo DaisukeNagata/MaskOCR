@@ -1,10 +1,11 @@
 # OCR function using Vision framework
 
 <p align="left">
-<img src="https://user-images.githubusercontent.com/16457165/127398047-3fc2b153-08f7-4fc0-a090-17beab9e5896.png" width=900>
+<img src="https://user-images.githubusercontent.com/16457165/127659852-d7125219-507e-4926-b06e-1d733e948526.jpeg" width=900>
 <br>
 <br>
 </p>
+
 
 # Documentation
 https://dbank0208.com/2021/07/29/maskocr-documentation/

@@ -44,10 +44,10 @@ public final class MaskOCRLayerModelView: NSObject {
         if UIDevice.current.userInterfaceIdiom == .pad {
             ipadCheck = 0.9
         }
-        maskModel?.imageView.frame = rect
+        model.imageView.frame = rect
 
         let imageSize = AVMakeRect(aspectRatio: images.size, insideRect: model.imageView.bounds)
-        model.imageView.image = maskModel?.image
+        model.imageView.image = model.image
         model.imageView.frame.size.width = imageSize.size.width*ipadCheck
         model.imageView.frame.size.height = imageSize.size.height*ipadCheck
         model.imageView.center = CGPoint(x: rect.width/2, y: rect.origin.y + rect.height/2)

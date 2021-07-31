@@ -58,6 +58,7 @@ public final class MaskOCRLayerModelView: NSObject {
                                               y: 0,
                                               width: imageSize.width*ipadCheck,
                                               height: imageSize.height*ipadCheck)
+        gestureObject.cALayerView.frame = gestureObject.lineView.frame
         gestureObject.cALayerView.tori(gestureObject)
         maskModel?.imageView.layer.addSublayer(gestureObject.cALayerView.hollowTargetLayer ?? CALayer())
         maskModel?.imageView.addSubview(gestureObject.cALayerView)

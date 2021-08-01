@@ -20,5 +20,5 @@ https://dbank0208.com/2021/07/29/maskocr-documentation/
 # Example
 
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/16457165/127770593-ff1d36e2-194f-44c4-8f50-89a5b0cf95d0.mp4" width=300>
+<img src= "https://user-images.githubusercontent.com/16457165/127780539-1097e492-820e-42de-aee0-6c64337f475c.mp4" width=300>
 </p>

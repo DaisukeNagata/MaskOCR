@@ -28,7 +28,7 @@ public class MaskOCRLayerViewModel: NSObject {
     }
 
     private func getScreenShot(_ imageView: UIImageView)  {
-        let rect = imageView.bounds
+        let rect = imageView.frame
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
         let context: CGContext = UIGraphicsGetCurrentContext()!
         imageView.layer.render(in: context)

@@ -6,8 +6,8 @@
         "repositoryURL": "git@github.com:daisukenagata/MaskOCR.git",
         "state": {
           "branch": null,
-          "revision": "e5a103dd9b9e23beda1e83fc322f1371b89ad76f",
-          "version": "1.13.3"
+          "revision": "38b56a01b8a36149ea862bc596127cf0a28772a6",
+          "version": "1.13.4"
         }
       }
     ]

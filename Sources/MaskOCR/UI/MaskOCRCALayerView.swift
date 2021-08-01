@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct MaskOCRCALayerView: UIViewControllerRepresentable {
 
-    var caLayer: CALayer
+    public var caLayer: CALayer
 
     public init(caLayer: CALayer) {
         self.caLayer = caLayer

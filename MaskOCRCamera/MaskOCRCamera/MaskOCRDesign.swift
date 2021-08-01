@@ -11,15 +11,21 @@ import MaskOCR
 final class MaskOCRDesign: ObservableObject {
 
     @Published var maskView: MaskOCRLayerModelView?
-    let gestureObject = MaskOCRGestureViewModel()
+
+    init() {
+        maskView?.gestureObject.cALayerView.borderWidth = 1
+        maskView?.gestureObject.cALayerView.opacity = 0.7
+    }
 
     func trim() {
         guard let imageView = maskView?.maskModel?.imageView else { return }
-        maskView?.mLViewModel.lockImageMask(imageView: imageView, windowFrameView: gestureObject.lineView)
+        maskView?.mLViewModel.lockImageMask(imageView: imageView, windowFrameView: maskView?.gestureObject.lineView ?? UIImageView(), boaderSize: 1)
+        maskView?.maskOCRGestureActionViewModel = nil
+        maskView = nil
     }
 
     func desginInit() {
-        maskView?.designInit()
+        layerModelView()
     }
 
     func didChangeCommponed(image: UIImage) {
@@ -27,9 +33,9 @@ final class MaskOCRDesign: ObservableObject {
         maskView?.frameResize(images: image, rect: UIScreen.main.bounds)
     }
 
-    func layerModelView() {
-        
-        maskView = MaskOCRLayerModelView(gestureObject: gestureObject,
+    private func layerModelView() {
+
+        maskView = MaskOCRLayerModelView(gestureObject: maskView?.gestureObject ?? MaskOCRGestureViewModel(),
                                            imageView: UIImageView(frame: CGRect(x: 0,
                                                                                 y: 0,
                                                                                 width: UIScreen.main.bounds.width,

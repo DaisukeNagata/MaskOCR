@@ -70,7 +70,7 @@ struct ContentView: View {
     }
 
     private func setting() {
-        maskViewDesign.layerModelView()
+        maskViewDesign.desginInit()
         ocrMask.setText(st: "[a-z-A-Z-0-9- -@-.-]")
         ocrMask.changeExecution = { image in
             DispatchQueue.main.async { [self] in
@@ -89,10 +89,6 @@ struct ContentView: View {
 
     private func trim() {
         maskViewDesign.trim()
-    }
-
-    private func desginInit() {
-        maskViewDesign.desginInit()
     }
 }
 

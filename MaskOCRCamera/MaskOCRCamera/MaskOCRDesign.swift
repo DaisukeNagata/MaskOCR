@@ -21,7 +21,6 @@ final class MaskOCRDesign: ObservableObject {
         guard let imageView = maskView?.maskModel?.imageView else { return }
         maskView?.mLViewModel.lockImageMask(imageView: imageView, windowFrameView: maskView?.gestureObject.lineView ?? UIImageView(), boaderSize: 1)
         maskView?.maskOCRGestureActionViewModel = nil
-        maskView = nil
     }
 
     func desginInit() {

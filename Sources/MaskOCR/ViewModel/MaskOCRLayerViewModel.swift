@@ -12,13 +12,16 @@ import MobileCoreServices
 @available(iOS 14.0, *)
 public class MaskOCRLayerViewModel: NSObject {
 
-    public func lockImageMask(imageView: UIImageView, windowFrameView: UIView) {
-        guard let image = imageView.image else { return }
-
+    public func lockImageMask(imageView: UIImageView, windowFrameView: UIView, boaderSize: CGFloat) {
+        let rect = CGRect(x: windowFrameView.frame.origin.x+boaderSize,
+                          y: windowFrameView.frame.origin.y+boaderSize,
+                          width: windowFrameView.frame.width-boaderSize,
+                          height: windowFrameView.frame.height-boaderSize)
+        guard let image = imageView.image?.resize(size: rect.size) else { return }
         let layer = CALayer()
         layer.contents = image.cgImage
         layer.contentsScale = image.scale
-        layer.frame = windowFrameView.frame
+        layer.frame = rect
         windowFrameView.removeFromSuperview()
         imageView.layer.mask = layer
         getScreenShot(imageView)

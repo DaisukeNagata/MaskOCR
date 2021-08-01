@@ -9,14 +9,19 @@
 import UIKit
 
 @available(iOS 14.0.0, *)
-final class MaskOCRHhollowTargetLayer: UIView {
+final public class MaskOCRHhollowTargetLayer: UIView {
 
+    public var opacity: Float = 0.7
+    public var borderWidth: CGFloat = 1
+    public var borderColor: UIColor = .white
+    public var backColor: UIColor = .black
+    
     var hollowTargetLayer: CALayer?
 
     private var path:  UIBezierPath?
     private var maskLayer: CAShapeLayer?
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: .zero)
 
         self.frame = UIScreen.main.bounds
@@ -35,8 +40,8 @@ final class MaskOCRHhollowTargetLayer: UIView {
                 let maskLayer = maskLayer
             else { return }
 
-        gesture.lineView.layer.borderWidth = 1
-        gesture.lineView.layer.borderColor = UIColor.white.cgColor
+        gesture.lineView.layer.borderWidth = borderWidth
+        gesture.lineView.layer.borderColor = borderColor.cgColor
 
         hollowTargetLayer.bounds = self.bounds
         hollowTargetLayer.position = CGPoint(
@@ -44,8 +49,8 @@ final class MaskOCRHhollowTargetLayer: UIView {
             y: self.bounds.height / 2.0
         )
 
-        hollowTargetLayer.backgroundColor = UIColor.black.cgColor
-        hollowTargetLayer.opacity = 0.7
+        hollowTargetLayer.backgroundColor = backColor.cgColor
+        hollowTargetLayer.opacity = opacity
 
         maskLayer.bounds = hollowTargetLayer.bounds
 

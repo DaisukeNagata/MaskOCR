@@ -7,7 +7,6 @@
 
 import AVFoundation
 import UIKit
-import MobileCoreServices
 
 @available(iOS 14.0, *)
 public final class MaskOCRLayerModelView: NSObject {
@@ -15,7 +14,7 @@ public final class MaskOCRLayerModelView: NSObject {
     public var maskModel: MaskOCRLayerModel?
     public var mLViewModel = MaskOCRLayerViewModel()
     public var gestureObject: MaskOCRGestureViewModel
-    var maskOCRGestureActionViewModel: MaskOCRGestureActionViewModel?
+    public var maskOCRGestureActionViewModel: MaskOCRGestureActionViewModel?
     var mv = MaskOCRGestureViewModel()
     private var originCenter: CGFloat = 0
 
@@ -68,8 +67,6 @@ public final class MaskOCRLayerModelView: NSObject {
 
     private func imageResize() {
         originCenter = (maskModel?.defaltImageView.frame.height ?? 0)/2 + (maskModel?.defaltImageView.frame.origin.y ?? 0)
-        maskModel?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2, y: originCenter)
         maskModel?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
         maskModel?.imageView.center = CGPoint(x:(maskModel?.defaltImageView.frame.width ?? 0) / 2, y: originCenter)
         maskModel?.imageView.layer.mask?.removeFromSuperlayer()

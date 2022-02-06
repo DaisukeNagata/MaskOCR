@@ -1,6 +1,6 @@
 # OCR function using Vision framework
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange)
-![Swift 5.4.2](https://img.shields.io/badge/Swift-5.4.2-orange)
+![Swift 5.4.2](https://img.shields.io/badge/Swift-5.5.2-orange)
 <p align="left">
 <img src="https://user-images.githubusercontent.com/16457165/127659852-d7125219-507e-4926-b06e-1d733e948526.jpeg" width=900>
 <br>
